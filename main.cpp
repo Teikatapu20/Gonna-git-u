@@ -1,6 +1,8 @@
+// Header files declaring the Product struct, Inventory class, Storage class, and Input functions
 #include "Input.h"
 #include "Inventory.h"
 #include "Storage.h"
+// Libraries for file I/O, string manipulation, and formatting
 #include <cmath>
 #include <iomanip>
 #include <iostream>
