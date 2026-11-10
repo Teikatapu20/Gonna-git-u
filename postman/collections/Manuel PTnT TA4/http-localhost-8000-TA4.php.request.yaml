@@ -1,0 +1,58 @@
+$kind: http-request
+name: http://localhost:8000/TA4.php
+description: ""
+url: http://localhost:8000/TA4.php
+method: POST
+body:
+  type: json
+  content: "{\r\n    \"name\": \"Ivan\"\r\n}"
+scripts:
+  - type: beforeRequest
+    code: ""
+    language: text/javascript
+  - type: afterResponse
+    code: "pm.test(\"Status code is 200\", function () {\r
+
+      \    pm.response.to.have.status(200);\r
+
+      });\r
+
+      \r
+
+      pm.test(\"Response is JSON\", function () {\r
+
+      \    pm.response.to.be.json;\r
+
+      });\r
+
+      \r
+
+      // Read response data\r
+
+      const responseData = pm.response.json();\r
+
+      const requestData = JSON.parse(pm.request.body.raw);\r
+
+      // Check if response data has an ID\r
+
+      pm.test(\"Response contains a numeric id\", function () {\r
+
+      \    pm.expect(responseData).to.have.property(\"id\");\r
+
+      \    pm.expect(responseData.id).to.be.a(\"number\");\r
+
+      });\r
+
+      // Check if response data has a name\r
+
+      pm.test(\"Response contains a name\", function () {\r
+
+      \    pm.expect(responseData).to.have.property(\"name\");\r
+
+      \    pm.expect(responseData.name).to.be.a(\"string\");\r
+
+      \    pm.expect(responseData.name).to.not.be.empty;\r
+
+      });"
+    language: text/javascript
+order: 1000

@@ -1,0 +1,10 @@
+$kind: collection
+auth:
+  - id: 7e9d8e87-95fc-4c61-ae2f-3953d59b1ed9
+    type: apikey
+    name: API Key
+    credentials:
+      key: "0"
+      value: admin
+    rules:
+      url: feu.instructure.com

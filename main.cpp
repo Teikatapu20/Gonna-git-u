@@ -1,8 +1,6 @@
-// Header files declaring the Product struct, Inventory class, Storage class, and Input functions
 #include "Input.h"
 #include "Inventory.h"
 #include "Storage.h"
-// Libraries for file I/O, string manipulation, and formatting
 #include <cmath>
 #include <iomanip>
 #include <iostream>
@@ -29,6 +27,10 @@ void printProducts(const std::vector<Product>& products) {
 void addProduct(Inventory& inventory) {
     Product p;
     p.id = Input::text("Product ID: ");
+    if (inventory.findById(p.id)) {
+        std::cout << "A product with ID '" << p.id << "' already exists. Duplicate IDs are not allowed.\n";
+        return;
+    }
     p.name = Input::text("Product name: ");
     p.category = Input::text("Category (game, console, accessory, etc.): ");
     p.platform = Input::text("Platform (PC, PlayStation, Xbox, Nintendo, etc.): ");

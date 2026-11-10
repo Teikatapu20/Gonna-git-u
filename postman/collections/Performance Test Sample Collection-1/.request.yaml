@@ -1,0 +1,15 @@
+$kind: http-request
+name: ""
+url: http://localhost:8000/TA4.php
+method: POST
+body:
+  type: json
+  content: "{\r\n    \"name\": \"Ivan\"\r\n}"
+scripts:
+  - type: beforeRequest
+    code: ""
+    language: text/javascript
+  - type: afterResponse
+    code: ""
+    language: text/javascript
+order: 1000

@@ -1,0 +1,6 @@
+$kind: http-request
+name: http://localhost:8000/TA4.php
+description: ""
+url: http://localhost:8000/TA4.php
+method: GET
+order: 2000

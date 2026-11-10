@@ -1,0 +1,22 @@
+{
+    "configurations": [
+        {
+            "name": "MSYS2 UCRT64",
+            "compilerPath": "D:/msys64/ucrt64/bin/g++.exe",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "D:/msys64/ucrt64/include",
+                "D:/msys64/ucrt64/include/GL"
+            ],
+            "defines": [
+                "_DEBUG",
+                "UNICODE",
+                "_UNICODE"
+            ],
+            "cStandard": "c17",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "windows-gcc-x64"
+        }
+    ],
+    "version": 4
+}

@@ -15,8 +15,8 @@
             "environment": [],
             "externalConsole": false,
             "MIMode": "gdb",
-            "miDebuggerPath": "C:\\MinGW\\bin\\gdb.exe",
-            "preLaunchTask": "C/C++: g++.exe build GameHub"
+            "miDebuggerPath": "D:\\msys64\\ucrt64\\bin\\gdb.exe", // Manuel's gdb path
+            "preLaunchTask": "Build GameHub"
         }
     ]
 }
