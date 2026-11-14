@@ -1,6 +1,6 @@
 # GameHub Inventory Management System
 
-A beginner-friendly C++ console program for managing a gaming shop's games, consoles, and accessories. It supports add, view, search, update, delete, and inventory summary. Data is stored in `products.csv` in the program's current working directory.
+A beginner-friendly C++ console program for managing a gaming shop's games. It supports add, view, search, update, delete, and inventory summary. Data is stored in `products.csv` in the program's current working directory.
 
 ## Build and run
 
@@ -30,7 +30,6 @@ On Windows, run `gamehub.exe` after compilation. The CSV file is created automat
 4. Member 1 integrates the branches, resolves conflicts, and makes sure the complete program builds before the group submits it.
 
 ## Manual review checklist
-
 - Add a game, consoles, and accessories; confirm each appears in View all.
 - Try adding an existing ID; confirm the duplicate is rejected.
 - Search by part of the name, category, platform, and ID.
