@@ -30,8 +30,7 @@ On Windows, run `gamehub.exe` after compilation. The CSV file is created automat
 4. Member 1 integrates the branches, resolves conflicts, and makes sure the complete program builds before the group submits it.
 
 ## Manual review checklist
-
-- Add a game; confirm each appears in View all.
+- Add a game, consoles, and accessories; confirm each appears in View all.
 - Try adding an existing ID; confirm the duplicate is rejected.
 - Search by part of the name, category, platform, and ID.
 - Update price, quantity, and reorder threshold; leave some fields blank to keep their values.
