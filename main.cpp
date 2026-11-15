@@ -126,14 +126,39 @@ namespace {
     }
 
     void showSummary(const Inventory& inventory) {
-        std::cout << "\n--- Inventory Summary ---\n"
-                << "Product records: " << inventory.getProducts().size() << '\n'
-                << "Total units in stock: " << inventory.totalUnits() << '\n'
-                << "Estimated stock value: " << std::fixed << std::setprecision(2) << inventory.inventoryValue() << '\n';
-        const auto low = inventory.lowStockProducts();
-        std::cout << "Products at/below reorder threshold: " << low.size() << '\n';
-        if (!low.empty()) printProducts(low);
+    const auto& products = inventory.getProducts();
+    const auto low = inventory.lowStockProducts();
+
+    std::cout << "\n--- Inventory Summary ---\n"
+              << "Product records: " << products.size() << '\n'
+              << "Total units in stock: " << inventory.totalUnits() << '\n'
+              << "Estimated stock value: " << std::fixed
+              << std::setprecision(2) << inventory.inventoryValue() << '\n'
+              << "Products at/below reorder threshold: "
+              << low.size() << '\n';
+
+    if (products.empty()) {
+        std::cout << "No products have been added yet.\n";
+        return;
     }
+
+    if (low.empty()) {
+        std::cout << "All products are above their reorder thresholds.\n";
+        return;
+    }
+
+    std::cout << "\nLOW-STOCK ALERT: These products need restocking.\n";
+
+    for (const Product& product : low) {
+        if (product.quantity == 0) {
+            std::cout << "OUT OF STOCK: " << product.id
+                      << " - " << product.name << '\n';
+        }
+    }
+
+    std::cout << '\n';
+    printProducts(low);
+}
 
     void printMenu() {
         std::cout << "\n=== GAMEHUB INVENTORY ===\n"
